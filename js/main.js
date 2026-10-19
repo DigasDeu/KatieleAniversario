@@ -84,8 +84,6 @@
      Hero: letras do nome e corações ocasionais
      -------------------------------------------------------------- */
   function heroIntro() {
-    const name = $(".hero__name");
-    if (name && !name.querySelector(".ch")) FX.splitChars(name);
     const hero = $("#inicio");
     hero.classList.remove("is-in");
     void hero.offsetWidth;

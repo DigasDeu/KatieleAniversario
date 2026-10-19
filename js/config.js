@@ -116,11 +116,11 @@ window.SITE_CONFIG = {
   /* ---------------- Trilha sonora ----------------
      Para usar uma faixa própria (licenciada), coloque o arquivo em
      assets/audio/ e informe o caminho, ex.: "assets/audio/trilha.mp3".
-     Com null, o site toca uma melodia de caixinha de música gerada no
-     próprio navegador (composição original, sem direitos autorais).  */
+     Com null, o site toca "Parabéns a você" em som de caixinha de música,
+     gerado no próprio navegador (melodia de domínio público).  */
   musica: {
     arquivo: null,
-    titulo: "Caixinha de música"
+    titulo: "Parabéns a você"
   },
 
   /* ---------------- Celebração final ---------------- */

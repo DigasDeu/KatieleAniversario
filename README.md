@@ -78,7 +78,7 @@ Coloque as imagens em `assets/images/` e adicione uma entrada em `fotos`. Fotos 
 Antes de publicar, confirme que todas as pessoas que aparecem nas fotos concordam com a divulgação. Remova do `config.js` qualquer foto que não deva ficar pública.
 
 ### Música
-Sem configuração, o botão de música toca uma melodia de caixinha de música gerada pelo próprio navegador (composição original, livre de direitos). Para usar uma faixa própria, salve um arquivo **licenciado** (por exemplo, da Biblioteca de Áudio do YouTube ou com licença Creative Commons que permita o uso) em `assets/audio/` e informe o caminho:
+Sem configuração, o botão de música toca "Parabéns a você" em som de caixinha de música, gerado pelo próprio navegador (a melodia é de domínio público). Para usar uma faixa própria, salve um arquivo **licenciado** (por exemplo, da Biblioteca de Áudio do YouTube ou com licença Creative Commons que permita o uso) em `assets/audio/` e informe o caminho:
 
 ```js
 musica: { arquivo: "assets/audio/trilha.mp3", titulo: "Nome da faixa" }

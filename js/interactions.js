@@ -604,19 +604,21 @@
       lp.connect(this.master);
       this.master.connect(c.destination);
 
-      const bpm = 76, eighth = 60 / bpm / 2;
+      /* "Parabéns a você" — melodia de domínio público, em compasso 3/4 */
+      const bpm = 104, eighth = 60 / bpm / 2;
       this.eighth = eighth;
-      const arp = (r, third, fifth) => [r, r + third, r + 7, r + 12, r + 12 + third, r + 12, r + 7, r + third].map((n, i) => (i === 3 || i === 4 ? n : n));
-      const F = arp(53, 4), Dm = arp(50, 3), Bb = arp(46, 4), C = arp(48, 4), Am = arp(45, 3);
+      const arp = (r, third) => [r, r + third, r + 7, r + 12, r + 7, r + third];
+      const F = arp(53, 4), C = arp(48, 4), Bb = arp(46, 4);
       this.bars = [
-        { arp: F,  mel: [[72, 1], [77, 1.5], [76, .5], [77, 1]] },
-        { arp: Dm, mel: [[81, 2], [79, 1], [77, 1]] },
-        { arp: Bb, mel: [[74, 1.5], [77, .5], [79, 1], [77, 1]] },
-        { arp: C,  mel: [[76, 3], [null, 1]] },
-        { arp: F,  mel: [[72, 1], [77, 1.5], [76, .5], [77, 1]] },
-        { arp: Am, mel: [[84, 2], [81, 1], [79, 1]] },
-        { arp: Bb, mel: [[77, 1], [79, 1], [81, 1], [79, 1]] },
-        { arp: C,  mel: [[76, 2], [77, 2]] }
+        { arp: F,  mel: [[null, 2], [72, .75], [72, .25]] },
+        { arp: F,  mel: [[74, 1], [72, 1], [77, 1]] },
+        { arp: C,  mel: [[76, 2], [72, .75], [72, .25]] },
+        { arp: C,  mel: [[74, 1], [72, 1], [79, 1]] },
+        { arp: F,  mel: [[77, 2], [72, .75], [72, .25]] },
+        { arp: F,  mel: [[84, 1], [81, 1], [77, 1]] },
+        { arp: Bb, mel: [[76, 1], [74, 1], [82, .75], [82, .25]] },
+        { arp: C,  mel: [[81, 1], [77, 1], [79, 1]] },
+        { arp: F,  mel: [[77, 3]] }
       ];
       this.bar = 0;
       this.nextBarTime = 0;
@@ -652,7 +654,7 @@
             if (n) this.bell(n, t0 + beat * 2 * e, 0.16, Math.max(1.2, d * 2 * e + 0.8));
             beat += d;
           });
-          this.nextBarTime += e * 8;
+          this.nextBarTime += e * b.arp.length;
           this.bar++;
         }
       };
