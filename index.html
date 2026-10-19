@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<title>Feliz Aniversário, Enf. Katiele</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Uma experiência digital interativa para celebrar o aniversário da Enf. Katiele.">
+<meta name="theme-color" content="#783F55">
+<meta property="og:title" content="Feliz aniversário, Enf. Katiele!">
+<meta property="og:description" content="Uma homenagem preparada com carinho. Abra o presente.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Pinyon+Script&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===================== SÍMBOLOS SVG REUTILIZÁVEIS ===================== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="g-ouro" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F3DFAE"/><stop offset=".5" stop-color="#D7B779"/><stop offset="1" stop-color="#A9843F"/>
+    </linearGradient>
+    <linearGradient id="g-rosa" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F7E3EA"/><stop offset="1" stop-color="#E3A9BD"/>
+    </linearGradient>
+    <linearGradient id="g-vinho" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#93506B"/><stop offset="1" stop-color="#5E2E42"/>
+    </linearGradient>
+  </defs>
+  <symbol id="flor" viewBox="-20 -20 40 40">
+    <g fill="url(#g-rosa)" stroke="#D99AB0" stroke-width=".6">
+      <ellipse cx="0" cy="-9" rx="6" ry="9"/>
+      <ellipse cx="0" cy="-9" rx="6" ry="9" transform="rotate(72)"/>
+      <ellipse cx="0" cy="-9" rx="6" ry="9" transform="rotate(144)"/>
+      <ellipse cx="0" cy="-9" rx="6" ry="9" transform="rotate(216)"/>
+      <ellipse cx="0" cy="-9" rx="6" ry="9" transform="rotate(288)"/>
+    </g>
+    <circle r="4.2" fill="url(#g-ouro)"/>
+  </symbol>
+  <symbol id="botao-flor" viewBox="-10 -14 20 28">
+    <path d="M0 13 C0 6 0 2 0 -2" stroke="#9BAE8C" stroke-width="1.4" fill="none"/>
+    <ellipse cx="0" cy="-6" rx="5" ry="7.5" fill="url(#g-rosa)" stroke="#D99AB0" stroke-width=".6"/>
+  </symbol>
+  <symbol id="folha" viewBox="-6 -14 12 28">
+    <path d="M0 -13 C7 -5 7 5 0 13 C-7 5 -7 -5 0 -13Z" fill="#B7C6A8"/>
+    <path d="M0 -11 L0 11" stroke="#93A783" stroke-width=".8"/>
+  </symbol>
+  <symbol id="brilho" viewBox="-10 -10 20 20">
+    <path d="M0 -10 C1 -2 2 -1 10 0 C2 1 1 2 0 10 C-1 2 -2 1 -10 0 C-2 -1 -1 -2 0 -10Z" fill="url(#g-ouro)"/>
+  </symbol>
+  <symbol id="coracao" viewBox="0 0 24 22">
+    <path d="M12 21 C5 15 1 11.5 1 7 C1 3.5 3.6 1 6.8 1 C9 1 10.8 2.2 12 4 C13.2 2.2 15 1 17.2 1 C20.4 1 23 3.5 23 7 C23 11.5 19 15 12 21Z"/>
+  </symbol>
+  <!-- Ramo floral para os cantos da tela -->
+  <symbol id="ramo" viewBox="0 0 220 220">
+    <path d="M6 214 C40 170 70 130 120 96 C150 76 180 60 214 54" fill="none" stroke="#B5C3A5" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M60 150 C58 120 70 98 92 84" fill="none" stroke="#B5C3A5" stroke-width="1.6" stroke-linecap="round"/>
+    <use href="#folha" x="22" y="150" width="14" height="30" transform="rotate(-40 29 165)"/>
+    <use href="#folha" x="70" y="118" width="14" height="30" transform="rotate(50 77 133)"/>
+    <use href="#folha" x="132" y="70" width="14" height="30" transform="rotate(-70 139 85)"/>
+    <use href="#folha" x="160" y="58" width="12" height="26" transform="rotate(80 166 71)"/>
+    <use href="#flor" x="80" y="66" width="34" height="34"/>
+    <use href="#flor" x="190" y="34" width="30" height="30"/>
+    <use href="#flor" x="104" y="100" width="22" height="22"/>
+    <use href="#botao-flor" x="40" y="120" width="14" height="22" transform="rotate(-20 47 131)"/>
+    <use href="#botao-flor" x="150" y="40" width="12" height="20" transform="rotate(30 156 50)"/>
+  </symbol>
+  <!-- Linha de batimento (ECG): o traço da enfermagem -->
+  <symbol id="ecg" viewBox="0 0 300 40">
+    <path d="M0 22 H96 L106 22 L114 6 L124 36 L134 14 L140 22 H170 C176 22 178 10 186 10 C194 10 196 22 202 22 H300" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+</svg>
+
+<!-- Canvas de partículas ambientes e de efeitos especiais -->
+<canvas id="ambient-canvas" aria-hidden="true"></canvas>
+<canvas id="fx-canvas" aria-hidden="true"></canvas>
+
+<!-- Barra de progresso da experiência -->
+<div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+
+<!-- ===================== 1. TELA INICIAL — O PRESENTE ===================== -->
+<div id="intro" class="intro" role="dialog" aria-modal="true" aria-labelledby="intro-title">
+  <svg class="intro__ramo intro__ramo--tl" aria-hidden="true"><use href="#ramo"/></svg>
+  <svg class="intro__ramo intro__ramo--br" aria-hidden="true"><use href="#ramo"/></svg>
+  <svg class="intro__ramo intro__ramo--tr" aria-hidden="true"><use href="#ramo"/></svg>
+
+  <div class="intro__inner">
+    <p class="eyebrow intro__eyebrow">Para a aniversariante do dia</p>
+    <h1 id="intro-title" class="intro__title"><span data-bind="nome">Katiele</span>,<br><em data-bind="intro.convite">este momento foi preparado especialmente para você</em></h1>
+
+    <button type="button" class="gift" id="gift" aria-label="Abrir o presente">
+      <span class="gift__glow" aria-hidden="true"></span>
+      <svg class="gift__svg" viewBox="0 0 200 200" aria-hidden="true">
+        <ellipse cx="100" cy="188" rx="66" ry="7" fill="#783F55" opacity=".12"/>
+        <g class="gift__box">
+          <rect x="38" y="92" width="124" height="94" rx="6" fill="url(#g-vinho)"/>
+          <rect x="90" y="92" width="20" height="94" fill="url(#g-ouro)"/>
+          <rect x="38" y="92" width="124" height="10" fill="#000" opacity=".12"/>
+        </g>
+        <g class="gift__lid">
+          <rect x="30" y="72" width="140" height="26" rx="5" fill="url(#g-vinho)"/>
+          <rect x="88" y="72" width="24" height="26" fill="url(#g-ouro)"/>
+          <path d="M100 72 C82 46 52 46 58 62 C62 72 86 72 100 72Z" fill="url(#g-ouro)"/>
+          <path d="M100 72 C118 46 148 46 142 62 C138 72 114 72 100 72Z" fill="url(#g-ouro)"/>
+          <circle cx="100" cy="70" r="7" fill="#C9A260"/>
+        </g>
+      </svg>
+    </button>
+
+    <button type="button" class="btn btn--primary" id="gift-btn" data-bind="intro.botao">Tenho uma surpresa para você</button>
+    <p class="intro__reveal" id="intro-reveal" aria-live="polite"></p>
+  </div>
+
+  <button type="button" class="intro__skip" id="intro-skip">Pular animação</button>
+</div>
+
+<!-- ===================== NAVEGAÇÃO ===================== -->
+<nav class="dots" aria-label="Seções da homenagem">
+  <ol>
+    <li><a href="#inicio" aria-label="Início"><span>Início</span></a></li>
+    <li><a href="#celebracao" aria-label="Celebração"><span>Celebração</span></a></li>
+    <li><a href="#mensagem" aria-label="Mensagem"><span>Mensagem</span></a></li>
+    <li><a href="#enfermagem" aria-label="Enfermagem"><span>Enfermagem</span></a></li>
+    <li><a href="#jardim" aria-label="Jardim dos desejos"><span>Desejos</span></a></li>
+    <li><a href="#bolo" aria-label="Bolo de aniversário"><span>Bolo</span></a></li>
+    <li><a href="#surpresas" aria-label="Cartões misteriosos"><span>Surpresas</span></a></li>
+    <li><a href="#memorias" aria-label="Galeria de memórias"><span>Memórias</span></a></li>
+    <li><a href="#celebrar" aria-label="Celebração final"><span>Celebrar</span></a></li>
+    <li><a href="#creditos" aria-label="Créditos"><span>Créditos</span></a></li>
+  </ol>
+</nav>
+
+<!-- Controle de música -->
+<div class="audio" id="audio" role="group" aria-label="Trilha sonora">
+  <button type="button" class="audio__btn" id="audio-play" aria-label="Tocar música" aria-pressed="false">
+    <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+    <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>
+  </button>
+  <span class="audio__label" id="audio-label">Música</span>
+  <span class="audio__bars" aria-hidden="true"><i></i><i></i><i></i></span>
+  <button type="button" class="audio__btn audio__btn--sm" id="audio-mute" aria-label="Silenciar" aria-pressed="false">
+    <svg class="i-vol" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M16 8.5c1.2 1 1.8 2.2 1.8 3.5s-.6 2.5-1.8 3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    <svg class="i-mute" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M16 9l5 6M21 9l-5 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+  </button>
+</div>
+
+<button type="button" class="to-top" id="to-top" aria-label="Voltar ao topo">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5l-7 7m7-7l7 7M12 5v14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<main id="conteudo">
+
+<!-- ===================== 3. HERO ===================== -->
+<section id="inicio" class="hero" aria-labelledby="hero-title">
+  <svg class="hero__ramo hero__ramo--l" aria-hidden="true"><use href="#ramo"/></svg>
+  <svg class="hero__ramo hero__ramo--r" aria-hidden="true"><use href="#ramo"/></svg>
+  <div class="hearts" id="hearts" aria-hidden="true"></div>
+
+  <div class="wrap hero__grid">
+    <div class="hero__text">
+      <p class="eyebrow">Um dia para celebrar</p>
+      <h2 id="hero-title" class="hero__title">
+        <span class="hero__line" data-bind="hero.titulo">Feliz aniversário,</span>
+        <span class="hero__treat"><span data-bind="tratamento">Enf.</span></span>
+        <span class="hero__name" data-bind="nome" data-split>Katiele</span>
+      </h2>
+      <svg class="hero__ecg" aria-hidden="true"><use href="#ecg"/></svg>
+      <p class="hero__lead" data-bind="hero.mensagem">Hoje é dia de celebrar sua vida, sua história, sua dedicação e a pessoa especial que você é. Que este novo ciclo seja repleto de saúde, felicidade, conquistas, amor e motivos para sorrir.</p>
+      <p class="hero__age" id="hero-age" hidden></p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#celebracao">Começar essa homenagem</a>
+        <a class="btn btn--ghost" href="#bolo">Ir direto ao bolo</a>
+      </div>
+    </div>
+
+    <figure class="hero__portrait">
+      <div class="hero__arch">
+        <img id="hero-photo" src="assets/images/retrato-estudio.jpg" alt="Katiele sorrindo, sentada em uma cadeira, em um ensaio fotográfico" width="698" height="894" fetchpriority="high">
+      </div>
+      <svg class="hero__sparkle hero__sparkle--a" aria-hidden="true"><use href="#brilho"/></svg>
+      <svg class="hero__sparkle hero__sparkle--b" aria-hidden="true"><use href="#brilho"/></svg>
+      <!-- Bolo ilustrado -->
+      <svg class="hero__cake" viewBox="0 0 120 120" aria-hidden="true">
+        <ellipse cx="60" cy="112" rx="50" ry="5" fill="#783F55" opacity=".15"/>
+        <rect x="14" y="70" width="92" height="38" rx="6" fill="#FFF9F2" stroke="#EAB9CA" stroke-width="2"/>
+        <path d="M14 80 Q25 90 37 80 T60 80 T83 80 T106 80" fill="none" stroke="#EAB9CA" stroke-width="4"/>
+        <rect x="28" y="42" width="64" height="30" rx="5" fill="url(#g-rosa)"/>
+        <path d="M28 50 Q36 58 44 50 T60 50 T76 50 T92 50" fill="none" stroke="#FFF9F2" stroke-width="3"/>
+        <rect x="57" y="22" width="6" height="20" rx="2" fill="url(#g-ouro)"/>
+        <path class="flicker" d="M60 8 C66 16 64 22 60 22 C56 22 54 16 60 8Z" fill="#F6C562"/>
+        <circle cx="40" cy="96" r="2.4" fill="#D7B779"/><circle cx="60" cy="98" r="2.4" fill="#D7B779"/><circle cx="80" cy="96" r="2.4" fill="#D7B779"/>
+      </svg>
+    </figure>
+  </div>
+
+  <a class="scroll-cue" href="#celebracao" aria-label="Continuar para a próxima seção">
+    <span>Role para continuar</span><i aria-hidden="true"></i>
+  </a>
+</section>
+
+<!-- ===================== 4. CONTADOR ===================== -->
+<section id="celebracao" class="section counter" aria-labelledby="counter-title">
+  <div class="wrap">
+    <header class="section__head reveal">
+      <p class="eyebrow">Celebração</p>
+      <h2 id="counter-title" class="section__title" data-bind="contador.titulo">Um novo ciclo começa agora</h2>
+    </header>
+    <div class="stats">
+      <div class="stat reveal">
+        <span class="stat__num" data-count="365">365</span>
+        <span class="stat__label">novos dias para escrever</span>
+      </div>
+      <div class="stat stat--feature reveal">
+        <span class="stat__num" data-count="1000" data-infinite>∞</span>
+        <span class="stat__label">motivos para sorrir</span>
+      </div>
+      <div class="stat reveal">
+        <span class="stat__num" data-count="52">52</span>
+        <span class="stat__label">semanas de boas histórias</span>
+      </div>
+    </div>
+    <p class="rotator reveal" aria-live="off">
+      Que não falte <span class="rotator__word" id="rotator-word">saúde</span>
+    </p>
+    <ul class="word-list" id="word-list" aria-label="Desejos do novo ciclo"></ul>
+  </div>
+</section>
+
+<!-- ===================== 5. CARTA ===================== -->
+<section id="mensagem" class="section letter-sec" aria-labelledby="letter-title">
+  <div class="wrap wrap--narrow">
+    <header class="section__head reveal">
+      <p class="eyebrow">Mensagem especial</p>
+      <h2 id="letter-title" class="section__title">Uma homenagem do coração</h2>
+    </header>
+
+    <div class="envelope-stage" id="envelope-stage">
+      <button type="button" class="envelope" id="envelope" aria-expanded="false" aria-controls="letter">
+        <span class="envelope__back" aria-hidden="true"></span>
+        <span class="envelope__paper" aria-hidden="true"></span>
+        <span class="envelope__front" aria-hidden="true"></span>
+        <span class="envelope__flap" aria-hidden="true"></span>
+        <span class="envelope__seal" aria-hidden="true"><svg><use href="#coracao"/></svg></span>
+        <span class="envelope__label">Uma mensagem para você</span>
+        <span class="envelope__hint">Toque para abrir</span>
+      </button>
+    </div>
+
+    <article class="letter" id="letter" hidden tabindex="-1" aria-label="Carta para Katiele">
+      <svg class="letter__corner letter__corner--tl" aria-hidden="true"><use href="#ramo"/></svg>
+      <svg class="letter__corner letter__corner--br" aria-hidden="true"><use href="#ramo"/></svg>
+      <p class="letter__greet" id="letter-greet"></p>
+      <div class="letter__body" id="letter-body"></div>
+      <p class="letter__sign" id="letter-sign"></p>
+      <div class="letter__actions">
+        <button type="button" class="btn btn--ghost" id="letter-close">Guardar a carta no envelope</button>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ===================== 6. ENFERMAGEM ===================== -->
+<section id="enfermagem" class="section nursing" aria-labelledby="nursing-title">
+  <div class="wrap">
+    <header class="section__head reveal">
+      <p class="eyebrow">Homenagem à enfermagem</p>
+      <h2 id="nursing-title" class="section__title">Cuidar também é uma forma de <em>transformar vidas.</em></h2>
+      <svg class="nursing__ecg" aria-hidden="true"><use href="#ecg"/></svg>
+    </header>
+    <div class="pillars">
+      <article class="pillar reveal">
+        <span class="pillar__icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><path d="M24 40C14 32 8 26.5 8 19.5 8 14 12.2 10 17.2 10c3 0 5.4 1.5 6.8 3.8C25.4 11.5 27.8 10 30.8 10 35.8 10 40 14 40 19.5 40 26.5 34 32 24 40Z"/><path d="M16 22h5l2-4 3 8 2-4h4"/></svg>
+        </span>
+        <h3>Empatia</h3>
+        <p>A capacidade de acolher, ouvir e compreender.</p>
+      </article>
+      <article class="pillar reveal">
+        <span class="pillar__icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="15"/><path d="M24 15v9l6 4"/><path d="M24 5v3M24 40v3M5 24h3M40 24h3"/></svg>
+        </span>
+        <h3>Dedicação</h3>
+        <p>O compromisso de fazer o melhor, mesmo diante dos desafios.</p>
+      </article>
+      <article class="pillar reveal">
+        <span class="pillar__icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><path d="M8 12c6-2 11-1 16 3v24c-5-4-10-5-16-3z"/><path d="M40 12c-6-2-11-1-16 3v24c5-4 10-5 16-3z"/><path d="M33 4v8M29 8h8"/></svg>
+        </span>
+        <h3>Conhecimento</h3>
+        <p>A importância da ciência, da responsabilidade e do aprendizado contínuo.</p>
+      </article>
+      <article class="pillar reveal">
+        <span class="pillar__icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><circle cx="24" cy="13" r="6"/><path d="M12 40c0-8 5.4-14 12-14s12 6 12 14"/><path d="M18 33h12M24 27v12"/></svg>
+        </span>
+        <h3>Humanização</h3>
+        <p>O cuidado que enxerga a pessoa para além de suas necessidades clínicas.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 7. JARDIM DOS DESEJOS ===================== -->
+<section id="jardim" class="section garden" aria-labelledby="garden-title">
+  <div class="wrap">
+    <header class="section__head reveal">
+      <p class="eyebrow">Jardim dos desejos</p>
+      <h2 id="garden-title" class="section__title">Cada desejo faz uma flor desabrochar</h2>
+      <p class="section__lead">Toque nos cartões para colher os desejos deste novo ciclo.</p>
+    </header>
+
+    <div class="garden__layout">
+      <div class="garden__tree" aria-hidden="true">
+        <svg viewBox="0 0 320 340" id="tree-svg">
+          <ellipse cx="160" cy="326" rx="90" ry="9" fill="#783F55" opacity=".1"/>
+          <path d="M160 324 C156 280 158 240 160 200" stroke="#8C6A55" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <path d="M160 236 C130 210 100 190 70 170" stroke="#8C6A55" stroke-width="6" fill="none" stroke-linecap="round"/>
+          <path d="M160 222 C190 196 222 180 252 160" stroke="#8C6A55" stroke-width="6" fill="none" stroke-linecap="round"/>
+          <path d="M160 204 C158 160 160 120 162 80" stroke="#8C6A55" stroke-width="6" fill="none" stroke-linecap="round"/>
+          <path d="M120 196 C110 160 104 130 96 100" stroke="#8C6A55" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <path d="M204 188 C214 150 222 124 230 96" stroke="#8C6A55" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <g fill="#C9D4BC" opacity=".55">
+            <circle cx="160" cy="110" r="70"/><circle cx="92" cy="150" r="52"/><circle cx="230" cy="140" r="56"/><circle cx="120" cy="80" r="44"/><circle cx="206" cy="78" r="46"/>
+          </g>
+          <g class="tree-blooms" id="tree-blooms"></g>
+        </svg>
+        <p class="garden__counter"><span id="wish-count">0</span> de <span id="wish-total">8</span> desejos colhidos</p>
+      </div>
+      <div class="wish-grid" id="wish-grid"></div>
+    </div>
+
+    <div class="center-actions">
+      <button type="button" class="btn btn--primary" id="wish-all">Receber todos os desejos</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 8. BOLO ===================== -->
+<section id="bolo" class="section cake-sec" aria-labelledby="cake-title">
+  <div class="wrap cake__grid">
+    <div class="cake__text">
+      <header class="section__head section__head--left reveal">
+        <p class="eyebrow">Hora do parabéns</p>
+        <h2 id="cake-title" class="section__title">Faça um pedido e apague as velinhas</h2>
+      </header>
+      <div class="cake__controls">
+        <button type="button" class="btn btn--ghost" id="cake-wish">Fazer um pedido</button>
+        <button type="button" class="btn btn--primary" id="cake-blow">Apagar as velinhas</button>
+        <button type="button" class="btn btn--text" id="cake-mic" aria-describedby="mic-note">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <span id="cake-mic-label">Soprar pelo microfone</span>
+        </button>
+      </div>
+      <p class="cake__note" id="mic-note">Opcional. O microfone só é usado depois da sua permissão e para nada além de ouvir o sopro.</p>
+      <div class="mic-meter" id="mic-meter" hidden aria-hidden="true"><span></span></div>
+      <p class="cake__message" id="cake-message" aria-live="polite"></p>
+      <button type="button" class="btn btn--text" id="cake-relight" hidden>Acender as velinhas de novo</button>
+    </div>
+
+    <div class="cake" id="cake" aria-hidden="true">
+      <div class="cake__plate"></div>
+      <div class="cake__tier cake__tier--bottom"><span class="drip"></span></div>
+      <div class="cake__tier cake__tier--top"><span class="drip"></span><span class="cake__dots"></span></div>
+      <div class="candles">
+        <div class="candle"><span class="flame"></span><span class="smoke"></span></div>
+        <div class="candle"><span class="flame"></span><span class="smoke"></span></div>
+        <div class="candle"><span class="flame"></span><span class="smoke"></span></div>
+      </div>
+      <div class="cake__wish-glow" id="cake-glow"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 9. CARTÕES MISTERIOSOS ===================== -->
+<section id="surpresas" class="section mystery" aria-labelledby="mystery-title">
+  <div class="wrap">
+    <header class="section__head reveal">
+      <p class="eyebrow">Cartões misteriosos</p>
+      <h2 id="mystery-title" class="section__title">Seis surpresas esperando por você</h2>
+      <p class="section__lead">Vire cada cartão para descobrir a mensagem escondida.</p>
+    </header>
+    <div class="flip-grid" id="flip-grid"></div>
+  </div>
+</section>
+
+<!-- ===================== 10. GALERIA ===================== -->
+<section id="memorias" class="section gallery-sec" aria-labelledby="gallery-title">
+  <div class="wrap">
+    <header class="section__head reveal">
+      <p class="eyebrow">Galeria de memórias</p>
+      <h2 id="gallery-title" class="section__title">Sorrisos que contam histórias</h2>
+      <p class="section__lead">Toque em uma foto para ampliar.</p>
+    </header>
+    <div class="gallery" id="gallery"></div>
+    <div class="gallery-empty" id="gallery-empty" hidden>
+      <svg aria-hidden="true"><use href="#ramo"/></svg>
+      <p>As fotografias poderão ser adicionadas aqui em breve.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 12. CELEBRAÇÃO FINAL ===================== -->
+<section id="celebrar" class="section finale" aria-labelledby="finale-title">
+  <svg class="finale__ramo finale__ramo--l" aria-hidden="true"><use href="#ramo"/></svg>
+  <svg class="finale__ramo finale__ramo--r" aria-hidden="true"><use href="#ramo"/></svg>
+  <div class="wrap wrap--narrow finale__inner">
+    <p class="eyebrow reveal">Para fechar com brilho</p>
+    <h2 id="finale-title" class="finale__title reveal" data-bind="final.titulo">Que a vida continue surpreendendo você com motivos para sorrir!</h2>
+    <button type="button" class="btn btn--primary btn--lg" id="celebrate">Celebrar este novo ciclo</button>
+    <div class="finale__result" id="finale-result" hidden>
+      <p class="finale__big" id="finale-big">Feliz aniversário, <span data-bind="nome">Katiele</span>!</p>
+      <ul class="finale__wishes" id="finale-wishes"></ul>
+      <button type="button" class="btn btn--ghost" id="restart">Reviver a experiência desde o início</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 13. CRÉDITOS ===================== -->
+<section id="creditos" class="credits" aria-labelledby="credits-title">
+  <div class="wrap wrap--narrow credits__inner">
+    <svg class="credits__star" aria-hidden="true"><use href="#brilho"/></svg>
+    <h2 id="credits-title" class="credits__title reveal" data-bind="creditos.titulo">Uma homenagem criada com carinho.</h2>
+    <div class="credits__text" id="credits-text"></div>
+
+    <div class="credits__role reveal" data-bind="creditos.rotulo">Desenvolvimento e criação</div>
+    <div class="credits__author" id="credits-author">
+      <img class="credits__logo" id="credits-logo" alt="" hidden>
+      <p class="credits__name" data-bind="creditos.autor">Diego Fernando</p>
+      <svg class="credits__underline" viewBox="0 0 320 24" aria-hidden="true"><path d="M6 16 C60 4 120 22 170 12 S270 6 314 14" fill="none" stroke="url(#g-ouro)" stroke-width="2" stroke-linecap="round"/></svg>
+      <p class="credits__team" data-bind="creditos.equipe">Mídia da SEMSA</p>
+    </div>
+
+    <p class="credits__closing reveal" data-bind="creditos.fechamento">Uma criação digital desenvolvida com dedicação, criatividade e carinho para celebrar a vida da Enf. Katiele.</p>
+    <p class="credits__sign reveal" data-bind="creditos.assinatura">Porque algumas homenagens merecem ir além das palavras.</p>
+    <p class="credits__foot"><span id="year"></span> · Feito com <svg class="mini-heart" aria-hidden="true"><use href="#coracao"/></svg> para <span data-bind="tratamentoNome">Enf. Katiele</span></p>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== LIGHTBOX DA GALERIA ===================== -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto ampliada" hidden>
+  <div class="lightbox__backdrop" data-close></div>
+  <figure class="lightbox__figure">
+    <div class="lightbox__frame">
+      <span class="lightbox__loader" aria-hidden="true"></span>
+      <img id="lightbox-img" alt="">
+    </div>
+    <figcaption><span id="lightbox-caption"></span><span class="lightbox__count" id="lightbox-count"></span></figcaption>
+  </figure>
+  <button type="button" class="lightbox__btn lightbox__close" id="lightbox-close" aria-label="Fechar foto">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+  <button type="button" class="lightbox__btn lightbox__prev" id="lightbox-prev" aria-label="Foto anterior">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+  <button type="button" class="lightbox__btn lightbox__next" id="lightbox-next" aria-label="Próxima foto">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/config.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/interactions.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
